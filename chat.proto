@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package pangea;
+
+message DoubleRatchedMsg {
+    bytes  doubleRatchetPK = 1;
+    uint32 n = 2;
+    uint32 pn = 3;
+    bytes cipherText = 4;
+}
+
+message PlainChatMessage {
+    bytes dAppPublicKey = 1;
+    string type = 2;
+    string aggregateID = 3;
+    bytes params  = 4;
+    bool render = 5;
+    bytes message = 6;
+    string createdAt = 7;
+    string messageID = 8;
+}
+
+message ChatMessage {
+
+    bytes oneTimePreKey = 1;
+    bytes preKey = 2;
+    bytes ephemeralKey = 3;
+    bytes ephemeralKeySignature = 4;
+
+    DoubleRatchedMsg message = 5;
+
+    bytes receiver = 6;
+    bytes sender = 7;
+    bytes messageID = 8;
+}
+
+message PreKey {
+    bytes key = 1;
+    bytes identityKey = 2;
+    bytes identityKeySignature = 3;
+}
+
+message OneTimePreKey {
+    bytes key = 1;
+    bytes identityKey = 2;
+    bytes identityKeySignature = 3;
+}
+
+message PreKeyBundle {
+    PreKey preKey = 2;
+    OneTimePreKey oneTimePreKey = 3;
+}
