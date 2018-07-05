@@ -21,7 +21,6 @@ message PlainChatMessage {
 }
 
 message ChatMessage {
-
     bytes oneTimePreKey = 1;
     bytes preKey = 2;
     bytes ephemeralKey = 3;
@@ -38,6 +37,7 @@ message PreKey {
     bytes key = 1;
     bytes identityKey = 2;
     bytes identityKeySignature = 3;
+    string timeStamp = 4;
 }
 
 message OneTimePreKey {
@@ -49,4 +49,16 @@ message OneTimePreKey {
 message PreKeyBundle {
     PreKey preKey = 2;
     OneTimePreKey oneTimePreKey = 3;
+}
+
+message MessageStateChange {
+    enum NewState {
+        SENT = 0;
+        DELIVERED = 1;
+        FAILED_TO_HANDLE = 2;
+    }
+    NewState newState = 1;
+    bytes messageID = 2;
+    bytes from = 3;
+    bytes fromSignature = 4;
 }
