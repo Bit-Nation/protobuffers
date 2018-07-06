@@ -9,7 +9,7 @@ message Profile {
     bytes  identityPubKey = 4;
     bytes  ethereumPubKey = 5;
     bytes  chatIdentityPubKey = 6;
-    string timestamp = 7;
+    int64 timestamp = 7;
     uint32 version = 8;
 
     bytes  identityKeySignature = 9;
