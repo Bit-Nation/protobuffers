@@ -34,21 +34,15 @@ message ChatMessage {
 }
 
 message PreKey {
-    bytes key = 1;
-    bytes identityKey = 2;
-    bytes identityKeySignature = 3;
+    bytes  key = 1;
+    bytes  identityKey = 2;
+    bytes  identityKeySignature = 3;
     string timeStamp = 4;
-}
-
-message OneTimePreKey {
-    bytes key = 1;
-    bytes identityKey = 2;
-    bytes identityKeySignature = 3;
 }
 
 message PreKeyBundle {
     PreKey preKey = 2;
-    OneTimePreKey oneTimePreKey = 3;
+    PreKey oneTimePreKey = 3;
 }
 
 message MessageStateChange {
