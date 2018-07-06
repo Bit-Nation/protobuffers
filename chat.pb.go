@@ -41,7 +41,7 @@ func (x MessageStateChange_NewState) String() string {
 	return proto.EnumName(MessageStateChange_NewState_name, int32(x))
 }
 func (MessageStateChange_NewState) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_chat_4ea66facce870866, []int{5, 0}
+	return fileDescriptor_chat_ccb4a11bca1483c2, []int{5, 0}
 }
 
 type DoubleRatchedMsg struct {
@@ -58,7 +58,7 @@ func (m *DoubleRatchedMsg) Reset()         { *m = DoubleRatchedMsg{} }
 func (m *DoubleRatchedMsg) String() string { return proto.CompactTextString(m) }
 func (*DoubleRatchedMsg) ProtoMessage()    {}
 func (*DoubleRatchedMsg) Descriptor() ([]byte, []int) {
-	return fileDescriptor_chat_4ea66facce870866, []int{0}
+	return fileDescriptor_chat_ccb4a11bca1483c2, []int{0}
 }
 func (m *DoubleRatchedMsg) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_DoubleRatchedMsg.Unmarshal(m, b)
@@ -124,7 +124,7 @@ func (m *PlainChatMessage) Reset()         { *m = PlainChatMessage{} }
 func (m *PlainChatMessage) String() string { return proto.CompactTextString(m) }
 func (*PlainChatMessage) ProtoMessage()    {}
 func (*PlainChatMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_chat_4ea66facce870866, []int{1}
+	return fileDescriptor_chat_ccb4a11bca1483c2, []int{1}
 }
 func (m *PlainChatMessage) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PlainChatMessage.Unmarshal(m, b)
@@ -218,7 +218,7 @@ func (m *ChatMessage) Reset()         { *m = ChatMessage{} }
 func (m *ChatMessage) String() string { return proto.CompactTextString(m) }
 func (*ChatMessage) ProtoMessage()    {}
 func (*ChatMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_chat_4ea66facce870866, []int{2}
+	return fileDescriptor_chat_ccb4a11bca1483c2, []int{2}
 }
 func (m *ChatMessage) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_ChatMessage.Unmarshal(m, b)
@@ -298,7 +298,7 @@ type PreKey struct {
 	Key                  []byte   `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
 	IdentityKey          []byte   `protobuf:"bytes,2,opt,name=identityKey,proto3" json:"identityKey,omitempty"`
 	IdentityKeySignature []byte   `protobuf:"bytes,3,opt,name=identityKeySignature,proto3" json:"identityKeySignature,omitempty"`
-	TimeStamp            string   `protobuf:"bytes,4,opt,name=timeStamp" json:"timeStamp,omitempty"`
+	TimeStamp            int64    `protobuf:"varint,4,opt,name=timeStamp" json:"timeStamp,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -308,7 +308,7 @@ func (m *PreKey) Reset()         { *m = PreKey{} }
 func (m *PreKey) String() string { return proto.CompactTextString(m) }
 func (*PreKey) ProtoMessage()    {}
 func (*PreKey) Descriptor() ([]byte, []int) {
-	return fileDescriptor_chat_4ea66facce870866, []int{3}
+	return fileDescriptor_chat_ccb4a11bca1483c2, []int{3}
 }
 func (m *PreKey) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PreKey.Unmarshal(m, b)
@@ -349,11 +349,11 @@ func (m *PreKey) GetIdentityKeySignature() []byte {
 	return nil
 }
 
-func (m *PreKey) GetTimeStamp() string {
+func (m *PreKey) GetTimeStamp() int64 {
 	if m != nil {
 		return m.TimeStamp
 	}
-	return ""
+	return 0
 }
 
 type PreKeyBundle struct {
@@ -368,7 +368,7 @@ func (m *PreKeyBundle) Reset()         { *m = PreKeyBundle{} }
 func (m *PreKeyBundle) String() string { return proto.CompactTextString(m) }
 func (*PreKeyBundle) ProtoMessage()    {}
 func (*PreKeyBundle) Descriptor() ([]byte, []int) {
-	return fileDescriptor_chat_4ea66facce870866, []int{4}
+	return fileDescriptor_chat_ccb4a11bca1483c2, []int{4}
 }
 func (m *PreKeyBundle) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_PreKeyBundle.Unmarshal(m, b)
@@ -416,7 +416,7 @@ func (m *MessageStateChange) Reset()         { *m = MessageStateChange{} }
 func (m *MessageStateChange) String() string { return proto.CompactTextString(m) }
 func (*MessageStateChange) ProtoMessage()    {}
 func (*MessageStateChange) Descriptor() ([]byte, []int) {
-	return fileDescriptor_chat_4ea66facce870866, []int{5}
+	return fileDescriptor_chat_ccb4a11bca1483c2, []int{5}
 }
 func (m *MessageStateChange) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_MessageStateChange.Unmarshal(m, b)
@@ -474,9 +474,9 @@ func init() {
 	proto.RegisterEnum("pangea.MessageStateChange_NewState", MessageStateChange_NewState_name, MessageStateChange_NewState_value)
 }
 
-func init() { proto.RegisterFile("chat.proto", fileDescriptor_chat_4ea66facce870866) }
+func init() { proto.RegisterFile("chat.proto", fileDescriptor_chat_ccb4a11bca1483c2) }
 
-var fileDescriptor_chat_4ea66facce870866 = []byte{
+var fileDescriptor_chat_ccb4a11bca1483c2 = []byte{
 	// 565 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x6c, 0x94, 0xdd, 0x8e, 0xd2, 0x40,
 	0x14, 0xc7, 0x6d, 0x59, 0xd9, 0x72, 0x60, 0xd7, 0x66, 0xb2, 0x9a, 0xc6, 0x18, 0x43, 0xaa, 0x31,
@@ -503,7 +503,7 @@ var fileDescriptor_chat_4ea66facce870866 = []byte{
 	0xb2, 0x83, 0x96, 0x1d, 0x6c, 0x4a, 0xca, 0xa7, 0x65, 0x07, 0xa5, 0x7a, 0x48, 0x6b, 0x50, 0xa7,
 	0xf5, 0xdb, 0x80, 0xae, 0x46, 0x60, 0x43, 0xe7, 0xdb, 0x01, 0x8f, 0x3c, 0xca, 0x91, 0xa7, 0x11,
 	0x32, 0x91, 0x8a, 0x5d, 0x45, 0xa6, 0x6e, 0x91, 0x09, 0x5c, 0xd4, 0x64, 0xd5, 0x79, 0x89, 0xe9,
-	0x68, 0x4c, 0x16, 0x24, 0xd2, 0x1c, 0x17, 0x82, 0xe6, 0x85, 0x42, 0xd4, 0x0b, 0x2a, 0xc3, 0xcd,
+	0x68, 0x4c, 0x16, 0x24, 0xd2, 0x1c, 0x17, 0x82, 0xe6, 0x85, 0x42, 0xd4, 0x09, 0x2a, 0xc3, 0xcd,
 	0x60, 0x50, 0xd6, 0xf3, 0x61, 0xcb, 0xa2, 0x0c, 0xc9, 0x9b, 0xc6, 0x60, 0xfa, 0x93, 0xf3, 0x3d,
 	0xa5, 0x32, 0xeb, 0x30, 0xa8, 0xcb, 0xf6, 0x98, 0x3b, 0x47, 0xd3, 0x9b, 0x49, 0xee, 0x5f, 0x03,
 	0x88, 0x5e, 0x94, 0x85, 0xa0, 0x02, 0xaf, 0x12, 0x99, 0x4d, 0xde, 0x83, 0xc5, 0xf0, 0x87, 0x72,
@@ -512,6 +512,6 @@ var fileDescriptor_chat_4ea66facce870866 = []byte{
 	0xfe, 0xb6, 0x97, 0xa7, 0x69, 0xba, 0xef, 0xc0, 0xda, 0xdf, 0x46, 0x2c, 0x38, 0x59, 0xf8, 0x77,
 	0x4b, 0xfb, 0x11, 0x39, 0x83, 0x9e, 0xe7, 0xdf, 0xcc, 0xbe, 0xf8, 0x81, 0xef, 0xd9, 0x06, 0xb9,
 	0x00, 0xfb, 0xe3, 0x74, 0x76, 0xe3, 0x7b, 0xf7, 0xcb, 0xcf, 0xf7, 0x9f, 0xa6, 0x77, 0xde, 0x8d,
-	0x6f, 0x9b, 0xab, 0xae, 0xfa, 0x32, 0xbd, 0xfd, 0x1f, 0x00, 0x00, 0xff, 0xff, 0x49, 0xdd, 0x0a,
-	0x54, 0xa7, 0x04, 0x00, 0x00,
+	0x6f, 0x9b, 0xab, 0xae, 0xfa, 0x32, 0xbd, 0xfd, 0x1f, 0x00, 0x00, 0xff, 0xff, 0x43, 0x7f, 0x36,
+	0xb8, 0xa7, 0x04, 0x00, 0x00,
 }
