@@ -20,15 +20,16 @@ message PlainChatMessage {
 
 message ChatMessage {
     bytes oneTimePreKey = 1;
-    bytes preKey = 2;
+    bytes signedPreKey = 2;
     bytes ephemeralKey = 3;
     bytes ephemeralKeySignature = 4;
+    int64 sharedSecretCreationDate = 5;
 
-    DoubleRatchedMsg message = 5;
+    DoubleRatchedMsg message = 6;
 
-    bytes receiver = 6;
-    bytes sender = 7;
-    bytes messageID = 8;
+    bytes receiver = 7;
+    bytes sender = 8;
+    bytes messageID = 9;
 }
 
 message PreKey {
