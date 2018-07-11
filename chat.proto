@@ -10,14 +10,12 @@ message DoubleRatchedMsg {
 }
 
 message PlainChatMessage {
-    bytes dAppPublicKey = 1;
-    string type = 2;
-    string aggregateID = 3;
-    bytes params  = 4;
-    bool render = 5;
-    bytes message = 6;
-    string createdAt = 7;
-    string messageID = 8;
+    bytes   dAppPublicKey   = 1;
+    string  type            = 2;
+    bytes   params          = 3;
+    bytes   message         = 4;
+    int64   createdAt       = 5;
+    string  messageID       = 6;
 }
 
 message ChatMessage {
