@@ -16,42 +16,46 @@ message PlainChatMessage {
     bytes   message         = 4;
     int64   createdAt       = 5;
     string  messageID       = 6;
+    bytes   sharedSecretID  = 7;
 }
 
 message ChatMessage {
-    bytes oneTimePreKey = 1;
-    bytes signedPreKey = 2;
-    bytes ephemeralKey = 3;
-    bytes ephemeralKeySignature = 4;
-    int64 sharedSecretCreationDate = 5;
+    bytes oneTimePreKey             = 1;
+    bytes signedPreKey              = 2;
+    bytes ephemeralKey              = 3;
+    bytes ephemeralKeySignature     = 4;
+    bytes senderChatIDKey           = 5;
+    bytes senderChatIDKeySignature  = 6;
+    int64 sharedSecretCreationDate  = 7;
 
-    DoubleRatchedMsg message = 6;
+    DoubleRatchedMsg message        = 8;
 
-    bytes receiver = 7;
-    bytes sender = 8;
-    bytes messageID = 9;
+    bytes receiver                  = 9;
+    bytes sender                    = 10;
+    bytes messageID                 = 11;
+    bytes usedSharedSecret          = 12;
 }
 
 message PreKey {
-    bytes  key = 1;
-    bytes  identityKey = 2;
-    bytes  identityKeySignature = 3;
-    int64 timeStamp = 4;
+    bytes key                   = 1;
+    bytes identityKey           = 2;
+    bytes identityKeySignature  = 3;
+    int64 timeStamp             = 4;
 }
 
 message PreKeyBundle {
-    PreKey preKey = 2;
-    PreKey oneTimePreKey = 3;
+    PreKey preKey           = 2;
+    PreKey oneTimePreKey    = 3;
 }
 
 message MessageStateChange {
     enum NewState {
-        SENT = 0;
-        DELIVERED = 1;
-        FAILED_TO_HANDLE = 2;
+        SENT                = 0;
+        DELIVERED           = 1;
+        FAILED_TO_HANDLE    = 2;
     }
-    NewState newState = 1;
-    bytes messageID = 2;
-    bytes from = 3;
+    NewState newState   = 1;
+    bytes messageID     = 2;
+    bytes from          = 3;
     bytes fromSignature = 4;
 }
