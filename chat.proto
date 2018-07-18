@@ -10,13 +10,15 @@ message DoubleRatchedMsg {
 }
 
 message PlainChatMessage {
-    bytes   dAppPublicKey   = 1;
-    string  type            = 2;
-    bytes   params          = 3;
-    bytes   message         = 4;
-    int64   createdAt       = 5;
-    string  messageID       = 6;
-    bytes   sharedSecretID  = 7;
+    bytes   dAppPublicKey               = 1;
+    string  type                        = 2;
+    bytes   params                      = 3;
+    bytes   message                     = 4;
+    int64   createdAt                   = 5;
+    string  messageID                   = 6;
+    bytes   sharedSecretBaseID          = 7;
+    int64   sharedSecretCreationDate    = 8;
+    uint32  version                     = 9;
 }
 
 message ChatMessage {
@@ -26,7 +28,6 @@ message ChatMessage {
     bytes ephemeralKeySignature     = 4;
     bytes senderChatIDKey           = 5;
     bytes senderChatIDKeySignature  = 6;
-    int64 sharedSecretCreationDate  = 7;
 
     DoubleRatchedMsg message        = 8;
 
@@ -34,6 +35,8 @@ message ChatMessage {
     bytes sender                    = 10;
     bytes messageID                 = 11;
     bytes usedSharedSecret          = 12;
+
+    uint32 version                  = 13;
 }
 
 message PreKey {
