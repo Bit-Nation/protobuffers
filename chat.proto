@@ -74,20 +74,18 @@ message BackendMessage {
     }
 
     message Request {
-        bytes requestID = 1;
-        repeated ChatMessage messages = 2;
-        MessageStateChange messageStateChange = 3;
-        PreKey preKey = 4;
-        uint32 newOneTimePreKeys = 5;
-        bytes preKeyBundle = 6;
-        Auth auth = 7;
+        repeated ChatMessage messages = 1;
+        MessageStateChange messageStateChange = 2;
+        PreKey preKey = 3;
+        uint32 newOneTimePreKeys = 4;
+        bytes preKeyBundle = 5;
+        Auth auth = 6;
     }
 
     message Response {
-        bytes requestID = 1;
-        PreKeyBundle preKeyBundle = 2;
-        repeated PreKey oneTimePrekeys = 3;
-        Auth auth = 4;
+        PreKeyBundle preKeyBundle = 1;
+        repeated PreKey oneTimePrekeys = 2;
+        Auth auth = 3;
     }
 
     message PreKeyBundle {
@@ -99,4 +97,5 @@ message BackendMessage {
     Request request = 1;
     Response response = 2;
     string error = 3;
+    bytes requestID = 4;
 }
