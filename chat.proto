@@ -88,7 +88,6 @@ message BackendMessage {
         PreKeyBundle preKeyBundle = 2;
         repeated PreKey oneTimePrekeys = 3;
         Auth auth = 4;
-        string error = 5;
     }
 
     message PreKeyBundle {
@@ -99,4 +98,5 @@ message BackendMessage {
 
     Request request = 1;
     Response response = 2;
+    string error = 3;
 }
