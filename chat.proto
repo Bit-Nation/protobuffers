@@ -75,7 +75,7 @@ message BackendMessage {
 
     message Request {
         bytes requestID = 1;
-        ChatMessage message = 2;
+        repeated ChatMessage messages = 2;
         MessageStateChange messageStateChange = 3;
         PreKey preKey = 4;
         uint32 newOneTimePreKeys = 5;
