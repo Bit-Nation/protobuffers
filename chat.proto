@@ -48,11 +48,6 @@ message PreKey {
     int64 timeStamp             = 4;
 }
 
-message PreKeyBundle {
-    PreKey preKey           = 2;
-    PreKey oneTimePreKey    = 3;
-}
-
 message MessageStateChange {
     enum NewState {
         SENT                = 0;
@@ -77,15 +72,17 @@ message BackendMessage {
         repeated ChatMessage messages = 1;
         MessageStateChange messageStateChange = 2;
         PreKey preKey = 3;
-        uint32 newOneTimePreKeys = 4;
-        bytes preKeyBundle = 5;
-        Auth auth = 6;
+        bytes signedPreKey = 4;
+        uint32 newOneTimePreKeys = 5;
+        bytes preKeyBundle = 6;
+        Auth auth = 7;
     }
 
     message Response {
         PreKeyBundle preKeyBundle = 1;
         repeated PreKey oneTimePrekeys = 2;
         Auth auth = 3;
+        PreKey signedPreKey = 4;
     }
 
     message PreKeyBundle {
@@ -97,5 +94,5 @@ message BackendMessage {
     Request request = 1;
     Response response = 2;
     string error = 3;
-    bytes requestID = 4;
+    string requestID = 4;
 }
