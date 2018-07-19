@@ -78,17 +78,17 @@ message BackendMessage {
         ChatMessage message = 2;
         MessageStateChange messageStateChange = 3;
         PreKey preKey = 4;
-        uint32 newOneTimePreKeys = 6;
-        bytes preKeyBundle = 7;
-        Auth auth = 8;
+        uint32 newOneTimePreKeys = 5;
+        bytes preKeyBundle = 6;
+        Auth auth = 7;
     }
 
     message Response {
         bytes requestID = 1;
         PreKeyBundle preKeyBundle = 2;
-        repeated PreKey oneTimePrekeys = 5;
-        Auth auth = 8;
-        string error = 9;
+        repeated PreKey oneTimePrekeys = 3;
+        Auth auth = 4;
+        string error = 5;
     }
 
     message PreKeyBundle {
