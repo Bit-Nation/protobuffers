@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package pangea;
 
+import "pangea.proto";
+
 message DoubleRatchedMsg {
     bytes  doubleRatchetPK = 1;
     uint32 n = 2;
@@ -61,4 +63,40 @@ message MessageStateChange {
     bytes messageID     = 2;
     bytes from          = 3;
     bytes fromSignature = 4;
+}
+
+message BackendMessage {
+
+    message Auth {
+        bytes toSign = 1;
+        bytes identityPublicKey = 2;
+        bytes signature = 3;
+    }
+
+    message Request {
+        bytes requestID = 1;
+        ChatMessage message = 2;
+        MessageStateChange messageStateChange = 3;
+        PreKey preKey = 4;
+        uint32 newOneTimePreKeys = 6;
+        bytes preKeyBundle = 7;
+        Auth auth = 8;
+    }
+
+    message Response {
+        bytes requestID = 1;
+        PreKeyBundle preKeyBundle = 2;
+        repeated PreKey oneTimePrekeys = 5;
+        Auth auth = 8;
+        string error = 9;
+    }
+
+    message PreKeyBundle {
+        Profile profile = 1;
+        PreKey signedPreKey = 2;
+        PreKey oneTimePreKey = 3;
+    }
+
+    Request request = 1;
+    Response response = 2;
 }
