@@ -71,11 +71,10 @@ message BackendMessage {
     message Request {
         repeated ChatMessage messages = 1;
         MessageStateChange messageStateChange = 2;
-        PreKey preKey = 3;
-        bytes signedPreKey = 4;
-        uint32 newOneTimePreKeys = 5;
-        bytes preKeyBundle = 6;
-        Auth auth = 7;
+        bytes signedPreKey = 3;
+        uint32 newOneTimePreKeys = 4;
+        bytes preKeyBundle = 5;
+        Auth auth = 6;
     }
 
     message Response {
