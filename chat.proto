@@ -4,7 +4,7 @@ package pangea;
 
 import "pangea.proto";
 
-message DoubleRatchedMsg {
+message DoubleRatchetMsg {
     bytes  doubleRatchetPK = 1;
     uint32 n = 2;
     uint32 pn = 3;
@@ -31,7 +31,7 @@ message ChatMessage {
     bytes senderChatIDKey           = 5;
     bytes senderChatIDKeySignature  = 6;
 
-    DoubleRatchedMsg message        = 8;
+    DoubleRatchetMsg message        = 8;
 
     bytes receiver                  = 9;
     bytes sender                    = 10;
