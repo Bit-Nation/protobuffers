@@ -19,14 +19,14 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type Profile struct {
-	Name                 string   `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
-	Location             string   `protobuf:"bytes,2,opt,name=location" json:"location,omitempty"`
-	Image                string   `protobuf:"bytes,3,opt,name=image" json:"image,omitempty"`
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Location             string   `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
+	Image                string   `protobuf:"bytes,3,opt,name=image,proto3" json:"image,omitempty"`
 	IdentityPubKey       []byte   `protobuf:"bytes,4,opt,name=identityPubKey,proto3" json:"identityPubKey,omitempty"`
 	EthereumPubKey       []byte   `protobuf:"bytes,5,opt,name=ethereumPubKey,proto3" json:"ethereumPubKey,omitempty"`
 	ChatIdentityPubKey   []byte   `protobuf:"bytes,6,opt,name=chatIdentityPubKey,proto3" json:"chatIdentityPubKey,omitempty"`
-	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp" json:"timestamp,omitempty"`
-	Version              uint32   `protobuf:"varint,8,opt,name=version" json:"version,omitempty"`
+	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	Version              uint32   `protobuf:"varint,8,opt,name=version,proto3" json:"version,omitempty"`
 	IdentityKeySignature []byte   `protobuf:"bytes,9,opt,name=identityKeySignature,proto3" json:"identityKeySignature,omitempty"`
 	EthereumKeySignature []byte   `protobuf:"bytes,10,opt,name=ethereumKeySignature,proto3" json:"ethereumKeySignature,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
