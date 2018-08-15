@@ -75,6 +75,7 @@ message BackendMessage {
         uint32 newOneTimePreKeys = 4;
         bytes preKeyBundle = 5;
         Auth auth = 6;
+        PreKey newSignedPreKey = 7;
     }
 
     message Response {
