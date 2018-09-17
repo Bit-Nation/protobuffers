@@ -38,7 +38,7 @@ func (m *Profile) Reset()         { *m = Profile{} }
 func (m *Profile) String() string { return proto.CompactTextString(m) }
 func (*Profile) ProtoMessage()    {}
 func (*Profile) Descriptor() ([]byte, []int) {
-	return fileDescriptor_pangea_0232f65404b13a12, []int{0}
+	return fileDescriptor_80d0a2cb816f1655, []int{0}
 }
 func (m *Profile) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Profile.Unmarshal(m, b)
@@ -132,9 +132,9 @@ func init() {
 	proto.RegisterType((*Profile)(nil), "pangea.Profile")
 }
 
-func init() { proto.RegisterFile("pangea.proto", fileDescriptor_pangea_0232f65404b13a12) }
+func init() { proto.RegisterFile("pangea.proto", fileDescriptor_80d0a2cb816f1655) }
 
-var fileDescriptor_pangea_0232f65404b13a12 = []byte{
+var fileDescriptor_80d0a2cb816f1655 = []byte{
 	// 237 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x6c, 0x91, 0x4d, 0x4e, 0xc3, 0x30,
 	0x10, 0x85, 0xe5, 0xfe, 0x24, 0xcd, 0xa8, 0xb0, 0x18, 0x75, 0x61, 0x21, 0x16, 0x11, 0x0b, 0x94,
