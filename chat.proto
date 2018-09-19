@@ -34,6 +34,7 @@ message PlainChatMessage {
     uint32  version                     = 9;
     AddUserPrivGroupChat addUserPrivChat = 10;
     RemoveUserPrivGroupChat rmUserPrivChat = 11;
+    bytes GroupChatID                   = 12;
 }
 
 message ChatMessage {
@@ -52,8 +53,6 @@ message ChatMessage {
     bytes usedSharedSecret          = 11;
 
     uint32 version                  = 12;
-
-    bytes groupChatID               = 13;
 }
 
 message PreKey {
