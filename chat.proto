@@ -15,16 +15,12 @@ message PlainChatMessage {
 
     message AddUserPrivGroupChat {
         repeated bytes users = 1;
-        bytes sharedSecret = 2;
-        bytes sharedSecretID = 3;
-        bytes chatID = 4;
+        bytes chatID = 2;
     }
 
     message RemoveUserPrivGroupChat {
         repeated bytes user = 1;
-        bytes newSharedSecret = 2;
-        bytes newSharedSecretID = 3;
-        bytes chatID = 4;
+        bytes chatID = 2;
     }
 
     bytes   dAppPublicKey               = 1;
@@ -56,6 +52,8 @@ message ChatMessage {
     bytes usedSharedSecret          = 11;
 
     uint32 version                  = 12;
+
+    bytes groupChatID               = 13;
 }
 
 message PreKey {
