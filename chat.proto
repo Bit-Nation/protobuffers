@@ -16,6 +16,7 @@ message PlainChatMessage {
     message AddUserPrivGroupChat {
         repeated bytes users = 1;
         bytes chatID = 2;
+        string groupID = 3;
     }
 
     message RemoveUserPrivGroupChat {
